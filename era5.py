@@ -21,6 +21,7 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 from dask import compute, delayed
+from dask.array import arctan2, sqrt
 from numpy import atleast_1d
 
 from atlite.gis import maybe_swap_spatial_dims
@@ -125,7 +126,6 @@ def get_data_wind(retrieval_params):
     """
     Get wind data for given retrieval parameters.
     """
-    print('--------------------4.3.8.1--------------------')
     ds = retrieve_data(
         variable=[
             "100m_u_component_of_wind",
@@ -134,23 +134,16 @@ def get_data_wind(retrieval_params):
         ],
         **retrieval_params,
     )
-    print('--------------------4.3.8.2--------------------')
     ds = _rename_and_clean_coords(ds)
-    print('--------------------4.3.8.3--------------------')
 
-    ds["wnd100m"] = np.sqrt(ds["u100"] ** 2 + ds["v100"] ** 2).assign_attrs(
+    ds["wnd100m"] = sqrt(ds["u100"] ** 2 + ds["v100"] ** 2).assign_attrs(
         units=ds["u100"].attrs["units"], long_name="100 metre wind speed"
     )
     # span the whole circle: 0 is north, π/2 is east, -π is south, 3π/2 is west
-    print('--------------------4.3.8.4--------------------')
-    azimuth = np.arctan2(ds["u100"], ds["v100"])
-    print('--------------------4.3.8.5--------------------')
+    azimuth = arctan2(ds["u100"], ds["v100"])
     ds["wnd_azimuth"] = azimuth.where(azimuth >= 0, azimuth + 2 * np.pi)
-    print('--------------------4.3.8.6--------------------')
     ds = ds.drop_vars(["u100", "v100"])
-    print('--------------------4.3.8.7--------------------')
     ds = ds.rename({"fsr": "roughness"})
-    print('--------------------4.3.8.8--------------------')
 
     return ds
 
@@ -357,69 +350,72 @@ def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
     If you want to track the state of your request go to
     https://cds-beta.climate.copernicus.eu/requests?tab=all
     """
-    print('--------------------4.3.8.1.1--------------------')
+    print('------------1------------')
     request = {"product_type": "reanalysis", "format": "netcdf"}
-    print('--------------------4.3.8.1.2--------------------')
+    print('------------2------------')
     request.update(updates)
-    print('--------------------4.3.8.1.3--------------------')
+    print('------------3------------')
 
     assert {"year", "month", "variable"}.issubset(
         request
     ), "Need to specify at least 'variable', 'year' and 'month'"
-    print('--------------------4.3.8.1.4--------------------')
+
+    print('------------4------------')
     client = cdsapi.Client(
         info_callback=logger.debug, debug=logging.DEBUG >= logging.root.level
     )
-    print('--------------------4.3.8.1.5--------------------')
+    print('------------5------------')
     result = client.retrieve(product, request)
-    print('--------------------4.3.8.1.6--------------------')
+    print('------------6------------')
 
     if lock is None:
-        print('--------------------4.3.8.1.7--------------------')
+        print('------------7------------')
         lock = nullcontext()
-    print('--------------------4.3.8.1.8--------------------')
+        print('------------8------------')
+
+    print('------------9------------')
     with lock:
-        print('--------------------4.3.8.1.9--------------------')
+        print('------------10------------')
         fd, target = mkstemp(suffix=".nc", dir=tmpdir)
-        print('--------------------4.3.8.1.10--------------------')
+        print('------------11------------')
         os.close(fd)
-        print('--------------------4.3.8.1.11--------------------')
+        print('------------12------------')
+
         # Inform user about data being downloaded as "* variable (year-month)"
         timestr = f"{request['year']}-{request['month']}"
-        print('--------------------4.3.8.1.12--------------------')
+        print('------------13------------')
         variables = atleast_1d(request["variable"])
-        print('--------------------4.3.8.1.13--------------------')
+        print('------------14------------')
         varstr = "\n\t".join([f"{v} ({timestr})" for v in variables])
-        print('--------------------4.3.8.1.14--------------------')
+        print('------------15------------')
         logger.info(f"CDS: Downloading variables\n\t{varstr}\n")
-        print('--------------------4.3.8.1.15--------------------')
+        print('------------16------------')
         result.download(target)
-        print('--------------------4.3.8.1.16--------------------')
-    print('--------------------4.3.8.1.17--------------------')
+        print('------------17------------')
+
+    print('------------18------------')
     ds = xr.open_dataset(target, chunks=chunks or {})
-    print('--------------------4.3.8.1.18--------------------')
+    print('------------19------------')
     if tmpdir is None:
-        print('--------------------4.3.8.1.19--------------------')
+        print('------------20------------')
         logger.debug(f"Adding finalizer for {target}")
-        print('--------------------4.3.8.1.20--------------------')
+        print('------------21------------')
         weakref.finalize(ds._file_obj._manager, noisy_unlink, target)
-        print('--------------------4.3.8.1.21--------------------')
+        print('------------22------------')
 
     # Remove default encoding we get from CDSAPI, which can lead to NaN values after loading with subsequent
     # saving due to how xarray handles netcdf compression (only float encoded as short int seem affected)
     # Fixes issue by keeping "float32" encoded as "float32" instead of internally saving as "short int", see:
     # https://stackoverflow.com/questions/75755441/why-does-saving-to-netcdf-without-encoding-change-some-values-to-nan
     # and hopefully fixed soon (could then remove), see https://github.com/pydata/xarray/issues/7691
-    print('--------------------4.3.8.1.22--------------------')
+    print('------------23------------')
     for v in ds.data_vars:
-        print('--------------------4.3.8.1.23--------------------')
+        print('------------24------------')
         if ds[v].encoding["dtype"] == "int16":
-            print('--------------------4.3.8.1.24--------------------')
+            print('------------25------------')
             ds[v].encoding.clear()
-            print('--------------------4.3.8.1.25--------------------')
-    
-    print('--------------------4.3.8.1.26--------------------')
-
+            print('------------26------------')
+    print('------------27------------')
     return ds
 
 
@@ -462,11 +458,9 @@ def get_data(
     xarray.Dataset
         Dataset of dask arrays of the retrieved variables.
     """
-    print('--------------------4.3.1--------------------')
     coords = cutout.coords
-    print('--------------------4.3.2--------------------')
+
     sanitize = creation_parameters.get("sanitize", True)
-    print('--------------------4.3.3--------------------')
 
     retrieval_params = {
         "product": "reanalysis-era5-single-levels",
@@ -476,41 +470,26 @@ def get_data(
         "tmpdir": tmpdir,
         "lock": lock,
     }
-    print('--------------------4.3.4--------------------')
+
     func = globals().get(f"get_data_{feature}")
-    print('--------------------4.3.5--------------------')
     sanitize_func = globals().get(f"sanitize_{feature}")
-    print('--------------------4.3.6--------------------')
+
     logger.info(f"Requesting data for feature {feature}...")
-    print('--------------------4.3.7--------------------')
 
     def retrieve_once(time):
-        print('--------------------4.3.8--------------------')
         ds = func({**retrieval_params, **time})
-        print('--------------------4.3.9--------------------')
         if sanitize and sanitize_func is not None:
-            print('--------------------4.3.10--------------------')
             ds = sanitize_func(ds)
-            print('--------------------4.3.11--------------------')
         return ds
 
-    print('--------------------4.3.12--------------------')
     if feature in static_features:
-        print('--------------------4.3.13--------------------')
         return retrieve_once(retrieval_times(coords, static=True)).squeeze()
 
-    print('--------------------4.3.14--------------------')
     time_chunks = retrieval_times(coords, monthly_requests=monthly_requests)
-    print('--------------------4.3.15--------------------')
     if concurrent_requests:
-        print('--------------------4.3.16--------------------')
         delayed_datasets = [delayed(retrieve_once)(chunk) for chunk in time_chunks]
-        print('--------------------4.3.17--------------------')
         datasets = compute(*delayed_datasets)
-        print('--------------------4.3.18--------------------')
     else:
-        print('--------------------4.3.19--------------------')
         datasets = map(retrieve_once, time_chunks)
-        print('--------------------4.3.20--------------------')
-    print('--------------------4.3.21--------------------')
+
     return xr.concat(datasets, dim="time").sel(time=coords["time"])
