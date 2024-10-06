@@ -26,6 +26,7 @@ from numpy import atleast_1d
 
 from atlite.gis import maybe_swap_spatial_dims
 from atlite.pv.solar_position import SolarPosition
+from datetime import datetime
 
 # Null context for running a with statements wihout any context
 try:
@@ -350,72 +351,72 @@ def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
     If you want to track the state of your request go to
     https://cds-beta.climate.copernicus.eu/requests?tab=all
     """
-    print('------------1------------')
+    print(f'------------1------------{datetime.now().strftime("%H:%M:%S")}')
     request = {"product_type": "reanalysis", "format": "netcdf"}
-    print('------------2------------')
+    print(f'------------2------------{datetime.now().strftime("%H:%M:%S")}')
     request.update(updates)
-    print('------------3------------')
+    print(f'------------3------------{datetime.now().strftime("%H:%M:%S")}')
 
     assert {"year", "month", "variable"}.issubset(
         request
     ), "Need to specify at least 'variable', 'year' and 'month'"
 
-    print('------------4------------')
+    print(f'------------4------------{datetime.now().strftime("%H:%M:%S")}')
     client = cdsapi.Client(
         info_callback=logger.debug, debug=logging.DEBUG >= logging.root.level
     )
-    print('------------5------------')
+    print(f'------------5------------{datetime.now().strftime("%H:%M:%S")}')
     result = client.retrieve(product, request)
-    print('------------6------------')
+    print(f'------------6------------{datetime.now().strftime("%H:%M:%S")}')
 
     if lock is None:
-        print('------------7------------')
+        print(f'------------7------------{datetime.now().strftime("%H:%M:%S")}')
         lock = nullcontext()
-        print('------------8------------')
+        print(f'------------8------------{datetime.now().strftime("%H:%M:%S")}')
 
-    print('------------9------------')
+    print(f'------------9------------{datetime.now().strftime("%H:%M:%S")}')
     with lock:
-        print('------------10------------')
+        print(f'------------10------------{datetime.now().strftime("%H:%M:%S")}')
         fd, target = mkstemp(suffix=".nc", dir=tmpdir)
-        print('------------11------------')
+        print(f'------------11------------{datetime.now().strftime("%H:%M:%S")}')
         os.close(fd)
-        print('------------12------------')
+        print(f'------------12------------{datetime.now().strftime("%H:%M:%S")}')
 
         # Inform user about data being downloaded as "* variable (year-month)"
         timestr = f"{request['year']}-{request['month']}"
-        print('------------13------------')
+        print(f'------------13------------{datetime.now().strftime("%H:%M:%S")}')
         variables = atleast_1d(request["variable"])
-        print('------------14------------')
+        print(f'------------14------------{datetime.now().strftime("%H:%M:%S")}')
         varstr = "\n\t".join([f"{v} ({timestr})" for v in variables])
-        print('------------15------------')
+        print(f'------------15------------{datetime.now().strftime("%H:%M:%S")}')
         logger.info(f"CDS: Downloading variables\n\t{varstr}\n")
-        print('------------16------------')
+        print(f'------------16------------{datetime.now().strftime("%H:%M:%S")}')
         result.download(target)
-        print('------------17------------')
+        print(f'------------17------------{datetime.now().strftime("%H:%M:%S")}')
 
-    print('------------18------------')
+    print(f'------------18------------{datetime.now().strftime("%H:%M:%S")}')
     ds = xr.open_dataset(target, chunks=chunks or {})
-    print('------------19------------')
+    print(f'------------19------------{datetime.now().strftime("%H:%M:%S")}')
     if tmpdir is None:
-        print('------------20------------')
+        print(f'------------20------------{datetime.now().strftime("%H:%M:%S")}')
         logger.debug(f"Adding finalizer for {target}")
-        print('------------21------------')
+        print(f'------------21------------{datetime.now().strftime("%H:%M:%S")}')
         weakref.finalize(ds._file_obj._manager, noisy_unlink, target)
-        print('------------22------------')
+        print(f'------------22------------{datetime.now().strftime("%H:%M:%S")}')
 
     # Remove default encoding we get from CDSAPI, which can lead to NaN values after loading with subsequent
     # saving due to how xarray handles netcdf compression (only float encoded as short int seem affected)
     # Fixes issue by keeping "float32" encoded as "float32" instead of internally saving as "short int", see:
     # https://stackoverflow.com/questions/75755441/why-does-saving-to-netcdf-without-encoding-change-some-values-to-nan
     # and hopefully fixed soon (could then remove), see https://github.com/pydata/xarray/issues/7691
-    print('------------23------------')
+    print(f'------------23------------{datetime.now().strftime("%H:%M:%S")}')
     for v in ds.data_vars:
-        print('------------24------------')
+        print(f'------------24------------{datetime.now().strftime("%H:%M:%S")}')
         if ds[v].encoding["dtype"] == "int16":
-            print('------------25------------')
+            print(f'------------25------------{datetime.now().strftime("%H:%M:%S")}')
             ds[v].encoding.clear()
-            print('------------26------------')
-    print('------------27------------')
+            print(f'------------26------------{datetime.now().strftime("%H:%M:%S")}')
+    print(f'------------27------------{datetime.now().strftime("%H:%M:%S")}')
     return ds
 
 
