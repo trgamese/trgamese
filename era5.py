@@ -369,12 +369,12 @@ def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
         fd, target = mkstemp(suffix=".nc", dir=tmpdir)
         os.close(fd)
 
-        # Inform user about data being downloaded as "* variable (year-month)"
-        timestr = f"{request['year']}-{request['month']}"
-        variables = atleast_1d(request["variable"])
-        varstr = "\n\t".join([f"{v} ({timestr})" for v in variables])
-        logger.info(f"CDS: Downloading variables\n\t{varstr}\n")
-        result.download(target)
+    # Inform user about data being downloaded as "* variable (year-month)"
+    timestr = f"{request['year']}-{request['month']}"
+    variables = atleast_1d(request["variable"])
+    varstr = "\n\t".join([f"{v} ({timestr})" for v in variables])
+    logger.info(f"CDS: Downloading variables\n\t{varstr}\n")
+    result.download(target)
 
     ds = xr.open_dataset(target, chunks=chunks or {})
     if tmpdir is None:
