@@ -32,7 +32,7 @@ import time
 import requests
 from collections import defaultdict
 
-progress_dict = defaultdict(str)
+download_status = {}
 
 # Null context for running a with statements wihout any context
 try:
@@ -349,73 +349,72 @@ def noisy_unlink(path):
     except PermissionError:
         logger.error(f"Unable to delete file {path}, as it is still in use.")
 
-def custom_download(url, size, target, lock, filename):
+def simple_download(url, size, target, lock, filename):
     """
-    A custom download function that displays a simplified progress bar.
-    The progress of multiple downloads is displayed in one line.
+    A simple download function that updates a single-line progress bar for multiple files.
     """
     if target is None:
         target = url.split("/")[-1]
+
+    # شروع دانلود
+    logging.info(f"Downloading {filename} to {target} ({size} bytes)")
+    start = time.time()
 
     mode = "wb"
     total = 0
     sleep = 10
     tries = 0
     headers = None
-    start = time.time()
 
-    while tries < 5:  # تعداد دفعات تلاش برای دانلود
-        r = requests.get(url, stream=True, timeout=10)
-        try:
-            r.raise_for_status()
-
-            with open(target, mode) as f:
+    with open(target, mode) as f:
+        while tries < 5:  # حداکثر 5 تلاش
+            r = requests.get(url, stream=True, headers=headers)
+            try:
+                r.raise_for_status()
                 for chunk in r.iter_content(chunk_size=1024):
                     if chunk:
                         f.write(chunk)
                         total += len(chunk)
-
-                        # محاسبه درصد پیشرفت
-                        percent = total / size * 100
-                        progress_dict[filename] = f"{filename}: {percent:.1f}%"
-
-                        # به‌روزرسانی خط کنسول
+                        # به روزرسانی وضعیت دانلود فایل
                         with lock:
+                            download_status[filename] = total / size * 100
                             update_progress_bar()
 
-        except requests.exceptions.ConnectionError as e:
-            print(f"Download interrupted: {e}")
-        finally:
-            r.close()
+            except requests.exceptions.ConnectionError as e:
+                logging.error(f"Download interrupted: {e}")
+                break
+            finally:
+                r.close()
 
-        if total >= size:
-            break
+            if total >= size:
+                break
 
-        time.sleep(sleep)
-        mode = "ab"
-        total = os.path.getsize(target)
-        sleep *= 1.5
-        if sleep > 60:
-            sleep = 60
-        headers = {"Range": f"bytes={total}-"}
-        tries += 1
+            logging.error(f"Download incomplete, downloaded {total} bytes out of {size}")
+            logging.warning(f"Sleeping {sleep} seconds")
+            time.sleep(sleep)
+            mode = "ab"
+            total = os.path.getsize(target)
+            sleep *= 1.5
+            headers = {"Range": f"bytes={total}-"}
+            tries += 1
 
-    if total != size:
-        raise Exception(f"Download failed: downloaded {total} byte(s) out of {size}")
+        if total != size:
+            raise Exception(f"Download failed: downloaded {total} bytes out of {size}")
 
     elapsed = time.time() - start
     if elapsed:
-        print(f"Download rate: {size / elapsed / 1024 / 1024:.2f} MB/s")
+        logging.info(f"Download rate {total / elapsed:.2f} bytes/s")
 
     return target
 
 
 def update_progress_bar():
     """
-    Updates the single-line progress bar for all files being downloaded.
+    Update a simple progress bar that shows the percentage of all files being downloaded.
+    Each file gets its own percentage in the same line.
     """
-    progress_line = " | ".join(progress_dict.values())
-    print(f"\r{progress_line}", end="", flush=True)
+    progress = " | ".join([f"{file}: {int(progress)}%" for file, progress in download_status.items()])
+    print(f"\r{progress}", end="")
 
 def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
     """
@@ -447,8 +446,9 @@ def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
     timestr = f"{request['year']}-{request['month']}"
     variables = atleast_1d(request["variable"])
     varstr = "\n\t".join([f"{v} ({timestr})" for v in variables])
+    filename = f"{variables[0]}_{timestr}.nc"  # فایل هدف
     logger.info(f"CDS: Downloading variables\n\t{varstr}\n")
-    custom_download(result, target, os.path.basename(target), result.content_length)
+    simple_download(result.location, result.content_length, target, lock, filename)
 
     ds = xr.open_dataset(target, chunks=chunks or {})
     if tmpdir is None:
