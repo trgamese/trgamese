@@ -21,12 +21,11 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 from dask import compute, delayed
-from dask.array import arctan2, sqrt
 from numpy import atleast_1d
 
 from atlite.gis import maybe_swap_spatial_dims
 from atlite.pv.solar_position import SolarPosition
-from datetime import datetime
+from tqdm import tqdm
 
 # Null context for running a with statements wihout any context
 try:
@@ -41,6 +40,9 @@ except ImportError:
 
 
 logger = logging.getLogger(__name__)
+
+# To track thread ids separately
+thread_counter = 0  # Global variable to increment the thread ID
 
 # Model and CRS Settings
 crs = 4326
@@ -137,11 +139,11 @@ def get_data_wind(retrieval_params):
     )
     ds = _rename_and_clean_coords(ds)
 
-    ds["wnd100m"] = sqrt(ds["u100"] ** 2 + ds["v100"] ** 2).assign_attrs(
+    ds["wnd100m"] = np.sqrt(ds["u100"] ** 2 + ds["v100"] ** 2).assign_attrs(
         units=ds["u100"].attrs["units"], long_name="100 metre wind speed"
     )
     # span the whole circle: 0 is north, π/2 is east, -π is south, 3π/2 is west
-    azimuth = arctan2(ds["u100"], ds["v100"])
+    azimuth = np.arctan2(ds["u100"], ds["v100"])
     ds["wnd_azimuth"] = azimuth.where(azimuth >= 0, azimuth + 2 * np.pi)
     ds = ds.drop_vars(["u100", "v100"])
     ds = ds.rename({"fsr": "roughness"})
@@ -351,72 +353,60 @@ def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
     If you want to track the state of your request go to
     https://cds-beta.climate.copernicus.eu/requests?tab=all
     """
-    print(f'------------1------------{datetime.now().strftime("%H:%M:%S")}')
+    global thread_counter
+
     request = {"product_type": "reanalysis", "format": "netcdf"}
-    print(f'------------2------------{datetime.now().strftime("%H:%M:%S")}')
     request.update(updates)
-    print(f'------------3------------{datetime.now().strftime("%H:%M:%S")}')
 
     assert {"year", "month", "variable"}.issubset(
         request
     ), "Need to specify at least 'variable', 'year' and 'month'"
 
-    print(f'------------4------------{datetime.now().strftime("%H:%M:%S")}')
     client = cdsapi.Client(
         info_callback=logger.debug, debug=logging.DEBUG >= logging.root.level
     )
-    print(f'------------5------------{datetime.now().strftime("%H:%M:%S")}')
     result = client.retrieve(product, request)
-    print(f'------------6------------{datetime.now().strftime("%H:%M:%S")}')
 
     if lock is None:
-        print(f'------------7------------{datetime.now().strftime("%H:%M:%S")}')
         lock = nullcontext()
-        print(f'------------8------------{datetime.now().strftime("%H:%M:%S")}')
 
-    print(f'------------9------------{datetime.now().strftime("%H:%M:%S")}')
     with lock:
-        print(f'------------10------------{datetime.now().strftime("%H:%M:%S")}')
+        # Protect thread_counter increment with lock
+        thread_id = thread_counter
+        thread_counter += 1  # Increment the thread counter for each call
+
         fd, target = mkstemp(suffix=".nc", dir=tmpdir)
-        print(f'------------11------------{datetime.now().strftime("%H:%M:%S")}')
         os.close(fd)
-        print(f'------------12------------{datetime.now().strftime("%H:%M:%S")}')
 
-        # Inform user about data being downloaded as "* variable (year-month)"
-        timestr = f"{request['year']}-{request['month']}"
-        print(f'------------13------------{datetime.now().strftime("%H:%M:%S")}')
-        variables = atleast_1d(request["variable"])
-        print(f'------------14------------{datetime.now().strftime("%H:%M:%S")}')
-        varstr = "\n\t".join([f"{v} ({timestr})" for v in variables])
-        print(f'------------15------------{datetime.now().strftime("%H:%M:%S")}')
-        logger.info(f"CDS: Downloading variables\n\t{varstr}\n")
-        print(f'------------16------------{datetime.now().strftime("%H:%M:%S")}')
-        result.download(target)
-        print(f'------------17------------{datetime.now().strftime("%H:%M:%S")}')
+    # Inform user about data being downloaded as "* variable (year-month)"
+    timestr = f"{request['year']}-{request['month']}"
+    variables = atleast_1d(request["variable"])
+    varstr = "\n\t".join([f"{v} ({timestr})" for v in variables])
+    logger.info(f"CDS: Downloading variables\n\t{varstr}\n")
 
-    print(f'------------18------------{datetime.now().strftime("%H:%M:%S")}')
+    # Download file in chunks and show progress bar
+    download_url = result.location
+    response = client.session.get(download_url, stream=True)
+    total_size = int(response.headers.get('content-length', 0))
+
+    # Use a unique position for each thread's progress bar
+    with tqdm(total=total_size, desc=f"Thread-{thread_id}: {timestr}", unit='B', unit_scale=True, position=thread_id, leave=True) as progress_bar:
+        with open(target, 'wb') as f:
+            for data in response.iter_content(1024):
+                f.write(data)
+                progress_bar.update(len(data))
+
     ds = xr.open_dataset(target, chunks=chunks or {})
-    print(f'------------19------------{datetime.now().strftime("%H:%M:%S")}')
     if tmpdir is None:
-        print(f'------------20------------{datetime.now().strftime("%H:%M:%S")}')
         logger.debug(f"Adding finalizer for {target}")
-        print(f'------------21------------{datetime.now().strftime("%H:%M:%S")}')
         weakref.finalize(ds._file_obj._manager, noisy_unlink, target)
-        print(f'------------22------------{datetime.now().strftime("%H:%M:%S")}')
 
     # Remove default encoding we get from CDSAPI, which can lead to NaN values after loading with subsequent
     # saving due to how xarray handles netcdf compression (only float encoded as short int seem affected)
-    # Fixes issue by keeping "float32" encoded as "float32" instead of internally saving as "short int", see:
-    # https://stackoverflow.com/questions/75755441/why-does-saving-to-netcdf-without-encoding-change-some-values-to-nan
-    # and hopefully fixed soon (could then remove), see https://github.com/pydata/xarray/issues/7691
-    print(f'------------23------------{datetime.now().strftime("%H:%M:%S")}')
     for v in ds.data_vars:
-        print(f'------------24------------{datetime.now().strftime("%H:%M:%S")}')
         if ds[v].encoding["dtype"] == "int16":
-            print(f'------------25------------{datetime.now().strftime("%H:%M:%S")}')
             ds[v].encoding.clear()
-            print(f'------------26------------{datetime.now().strftime("%H:%M:%S")}')
-    print(f'------------27------------{datetime.now().strftime("%H:%M:%S")}')
+
     return ds
 
 
