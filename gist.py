@@ -10,7 +10,7 @@ year = '2011'
     
 logging.basicConfig(level=logging.INFO)
 
-world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
+world = gpd.read_file("./data/ne_110m_admin_0_countries.shp")
 # Drop uninhabited regions and Antarctica
 world = world[(world.pop_est > 0) & (world.name != "Antarctica")]
 
