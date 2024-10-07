@@ -26,6 +26,13 @@ from numpy import atleast_1d
 
 from atlite.gis import maybe_swap_spatial_dims
 from atlite.pv.solar_position import SolarPosition
+from tqdm import tqdm
+import threading
+import time
+import requests
+
+progress_bars = {}
+lock = threading.Lock()
 
 # Null context for running a with statements wihout any context
 try:
@@ -342,6 +349,89 @@ def noisy_unlink(path):
     except PermissionError:
         logger.error(f"Unable to delete file {path}, as it is still in use.")
 
+def custom_download(result, target, file_name, size):
+    """
+    Custom download function to track progress of multiple files in a single line.
+    
+    :param result: CDSAPI result object
+    :param target: Target file to download
+    :param file_name: Name of the file being downloaded
+    :param size: Total size of the file
+    """
+    with lock:
+        if file_name not in progress_bars:
+            progress_bars[file_name] = {"total": size, "downloaded": 0}
+
+    total = 0
+    mode = "wb"
+    sleep = 10
+    tries = 0
+    headers = None
+
+    while tries < result.retry_max:
+        r = result.robust(result.session.get)(
+            result.location,
+            stream=True,
+            verify=result.verify,
+            headers=headers,
+            timeout=result.timeout,
+        )
+        try:
+            r.raise_for_status()
+
+            with open(target, mode) as f:
+                for chunk in r.iter_content(chunk_size=1024):
+                    if chunk:
+                        f.write(chunk)
+                        total += len(chunk)
+
+                        with lock:
+                            progress_bars[file_name]["downloaded"] = total
+
+                        update_progress_bar()
+
+        except requests.exceptions.ConnectionError as e:
+            result.error("Download interrupted: %s" % (e,))
+        finally:
+            r.close()
+
+        if total >= size:
+            break
+
+        result.error(
+            "Download incomplete, downloaded %s byte(s) out of %s" % (total, size)
+        )
+        result.warning("Sleeping %s seconds" % (sleep,))
+        time.sleep(sleep)
+        mode = "ab"
+        total = os.path.getsize(target)
+        sleep *= 1.5
+        if sleep > result.sleep_max:
+            sleep = result.sleep_max
+        headers = {"Range": "bytes=%d-" % total}
+        tries += 1
+        result.warning("Resuming download at byte %s" % (total,))
+
+    if total != size:
+        raise Exception(
+            "Download failed: downloaded %s byte(s) out of %s" % (total, size)
+        )
+
+    return target
+
+def update_progress_bar():
+    """
+    Update and print the progress of all files in a single line.
+    """
+    with lock:
+        progress_str = ""
+        for file_name, progress in progress_bars.items():
+            downloaded = progress["downloaded"]
+            total = progress["total"]
+            percentage = (downloaded / total) * 100
+            progress_str += f"{file_name}: {percentage:.1f}% | "
+        
+        tqdm.write(progress_str.rstrip(" | "))
 
 def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
     """
@@ -374,7 +464,7 @@ def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
     variables = atleast_1d(request["variable"])
     varstr = "\n\t".join([f"{v} ({timestr})" for v in variables])
     logger.info(f"CDS: Downloading variables\n\t{varstr}\n")
-    result.download(target)
+    custom_download(result, target, os.path.basename(target), result.content_length)
 
     ds = xr.open_dataset(target, chunks=chunks or {})
     if tmpdir is None:
