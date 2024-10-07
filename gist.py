@@ -32,7 +32,8 @@ cutout = atlite.Cutout(
 cutout.prepare(
     compression={"zlib": True, "complevel": 9},
     monthly_requests=True,
-    concurrent_requests=True
+    concurrent_requests=True,
+    features=['wind',]
 )
 
 # Extract the wind power generation capacity factors
