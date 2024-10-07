@@ -30,9 +30,9 @@ from tqdm import tqdm
 import threading
 import time
 import requests
+from collections import defaultdict
 
-progress_bars = {}
-lock = threading.Lock()
+progress_dict = defaultdict(str)
 
 # Null context for running a with statements wihout any context
 try:
@@ -349,33 +349,23 @@ def noisy_unlink(path):
     except PermissionError:
         logger.error(f"Unable to delete file {path}, as it is still in use.")
 
-def custom_download(result, target, file_name, size):
+def custom_download(url, size, target, lock, filename):
     """
-    Custom download function to track progress of multiple files in a single line.
-    
-    :param result: CDSAPI result object
-    :param target: Target file to download
-    :param file_name: Name of the file being downloaded
-    :param size: Total size of the file
+    A custom download function that displays a simplified progress bar.
+    The progress of multiple downloads is displayed in one line.
     """
-    with lock:
-        if file_name not in progress_bars:
-            progress_bars[file_name] = {"total": size, "downloaded": 0}
+    if target is None:
+        target = url.split("/")[-1]
 
-    total = 0
     mode = "wb"
+    total = 0
     sleep = 10
     tries = 0
     headers = None
+    start = time.time()
 
-    while tries < result.retry_max:
-        r = result.robust(result.session.get)(
-            result.location,
-            stream=True,
-            verify=result.verify,
-            headers=headers,
-            timeout=result.timeout,
-        )
+    while tries < 5:  # تعداد دفعات تلاش برای دانلود
+        r = requests.get(url, stream=True, timeout=10)
         try:
             r.raise_for_status()
 
@@ -385,53 +375,47 @@ def custom_download(result, target, file_name, size):
                         f.write(chunk)
                         total += len(chunk)
 
-                        with lock:
-                            progress_bars[file_name]["downloaded"] = total
+                        # محاسبه درصد پیشرفت
+                        percent = total / size * 100
+                        progress_dict[filename] = f"{filename}: {percent:.1f}%"
 
-                        update_progress_bar()
+                        # به‌روزرسانی خط کنسول
+                        with lock:
+                            update_progress_bar()
 
         except requests.exceptions.ConnectionError as e:
-            result.error("Download interrupted: %s" % (e,))
+            print(f"Download interrupted: {e}")
         finally:
             r.close()
 
         if total >= size:
             break
 
-        result.error(
-            "Download incomplete, downloaded %s byte(s) out of %s" % (total, size)
-        )
-        result.warning("Sleeping %s seconds" % (sleep,))
         time.sleep(sleep)
         mode = "ab"
         total = os.path.getsize(target)
         sleep *= 1.5
-        if sleep > result.sleep_max:
-            sleep = result.sleep_max
-        headers = {"Range": "bytes=%d-" % total}
+        if sleep > 60:
+            sleep = 60
+        headers = {"Range": f"bytes={total}-"}
         tries += 1
-        result.warning("Resuming download at byte %s" % (total,))
 
     if total != size:
-        raise Exception(
-            "Download failed: downloaded %s byte(s) out of %s" % (total, size)
-        )
+        raise Exception(f"Download failed: downloaded {total} byte(s) out of {size}")
+
+    elapsed = time.time() - start
+    if elapsed:
+        print(f"Download rate: {size / elapsed / 1024 / 1024:.2f} MB/s")
 
     return target
 
+
 def update_progress_bar():
     """
-    Update and print the progress of all files in a single line.
+    Updates the single-line progress bar for all files being downloaded.
     """
-    with lock:
-        progress_str = ""
-        for file_name, progress in progress_bars.items():
-            downloaded = progress["downloaded"]
-            total = progress["total"]
-            percentage = (downloaded / total) * 100
-            progress_str += f"{file_name}: {percentage:.1f}% | "
-        
-        tqdm.write(progress_str.rstrip(" | "))
+    progress_line = " | ".join(progress_dict.values())
+    print(f"\r{progress_line}", end="", flush=True)
 
 def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
     """
