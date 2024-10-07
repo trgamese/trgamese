@@ -349,9 +349,9 @@ def noisy_unlink(path):
     except PermissionError:
         logger.error(f"Unable to delete file {path}, as it is still in use.")
 
-def simple_download(url, size, target, lock, filename):
+def advanced_download(url, size, target, lock, filename):
     """
-    A simple download function that updates a single-line progress bar for multiple files.
+    An optimized download function that keeps the original downloading speed and updates a single-line progress bar.
     """
     if target is None:
         target = url.split("/")[-1]
@@ -366,12 +366,13 @@ def simple_download(url, size, target, lock, filename):
     tries = 0
     headers = None
 
-    with open(target, mode) as f:
-        while tries < 5:  # حداکثر 5 تلاش
-            r = requests.get(url, stream=True, headers=headers)
-            try:
-                r.raise_for_status()
-                for chunk in r.iter_content(chunk_size=1024):
+    while tries < 5:  # حداکثر 5 تلاش برای دانلود
+        r = requests.get(url, stream=True, headers=headers)
+        try:
+            r.raise_for_status()
+
+            with open(target, mode) as f:
+                for chunk in r.iter_content(chunk_size=1024 * 1024):  # استفاده از chunk های بزرگتر برای دانلود سریع‌تر
                     if chunk:
                         f.write(chunk)
                         total += len(chunk)
@@ -380,26 +381,26 @@ def simple_download(url, size, target, lock, filename):
                             download_status[filename] = total / size * 100
                             update_progress_bar()
 
-            except requests.exceptions.ConnectionError as e:
-                logging.error(f"Download interrupted: {e}")
-                break
-            finally:
-                r.close()
+        except requests.exceptions.ConnectionError as e:
+            logging.error(f"Download interrupted: {e}")
+            break
+        finally:
+            r.close()
 
-            if total >= size:
-                break
+        if total >= size:
+            break
 
-            logging.error(f"Download incomplete, downloaded {total} bytes out of {size}")
-            logging.warning(f"Sleeping {sleep} seconds")
-            time.sleep(sleep)
-            mode = "ab"
-            total = os.path.getsize(target)
-            sleep *= 1.5
-            headers = {"Range": f"bytes={total}-"}
-            tries += 1
+        logging.error(f"Download incomplete, downloaded {total} bytes out of {size}")
+        logging.warning(f"Sleeping {sleep} seconds")
+        time.sleep(sleep)
+        mode = "ab"
+        total = os.path.getsize(target)
+        sleep *= 1.5
+        headers = {"Range": f"bytes={total}-"}
+        tries += 1
 
-        if total != size:
-            raise Exception(f"Download failed: downloaded {total} bytes out of {size}")
+    if total != size:
+        raise Exception(f"Download failed: downloaded {total} bytes out of {size}")
 
     elapsed = time.time() - start
     if elapsed:
@@ -448,7 +449,7 @@ def retrieve_data(product, chunks=None, tmpdir=None, lock=None, **updates):
     varstr = "\n\t".join([f"{v} ({timestr})" for v in variables])
     filename = f"{variables[0]}_{timestr}.nc"  # فایل هدف
     logger.info(f"CDS: Downloading variables\n\t{varstr}\n")
-    simple_download(result.location, result.content_length, target, lock, filename)
+    advanced_download(result.location, result.content_length, target, lock, filename)
 
     ds = xr.open_dataset(target, chunks=chunks or {})
     if tmpdir is None:
