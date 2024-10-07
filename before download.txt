@@ -1,456 +1,321 @@
-INFO:atlite.data:Storing temporary files in /tmp/tmpqiuv31hi
+INFO:atlite.data:Storing temporary files in /tmp/tmpsljpeipx
 INFO:atlite.data:Calculating and writing with module era5:
+INFO:atlite.datasets.era5:Requesting data for feature influx...
 INFO:atlite.datasets.era5:Requesting data for feature wind...
 /usr/local/python/3.12.1/lib/python3.12/site-packages/cads_api_client/legacy_api_client.py:101: UserWarning: This is a beta version. The following parameters have not been implemented yet: {'info_callback': <bound method Logger.debug of <Logger atlite.datasets.era5 (INFO)>>}.
   warnings.warn(
---------------------1--------------------
---------------------2--------------------
---------------------3--------------------
---------------------4--------------------
---------------------4.1--------------------
---------------------4.2--------------------
---------------------4.3--------------------
---------------------4.4--------------------
---------------------4.5--------------------
-[Delayed('get_data-31d9ed71-08b2-484b-bd24-5f30a79a0909')]
---------------------4.5.1--------------------
---------------------4.5.1.1--------------------
---------------------4.5.1.2--------------------
---------------------4.5.1.24--------------------
---------------------4.5.1.25--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.26--------------------
---------------------4.5.1.30--------------------
---------------------4.5.1.31--------------------
---------------------4.5.1.32--------------------
---------------------4.5.2--------------------
---------------------4.5.3--------------------
---------------------4.5.10.1--------------------
---------------------4.5.10.25--------------------
---------------------4.5.10.26--------------------
---------------------4.5.10.28--------------------
---------------------4.5.10.288--------------------
---------------------4.5.10.29--------------------
---------------------4.5.10.30--------------------
---------------------4.5.10.32--------------------
---------------------4.5.4--------------------
---------------------4.5.4.1--------------------
---------------------4.5.4.2--------------------
---------------------4.5.4.3--------------------
---------------------4.5.4.4--------------------
---------------------4.5.4.5--------------------
---------------------4.5.4.6--------------------
---------------------4.5.4.7--------------------
---------------------4.5.4.8--------------------
---------------------4.5.4.11--------------------
---------------------4.5.4.12--------------------
---------------------4.5.4.13--------------------
---------------------4.5.4.14--------------------
---------------------4.5.4.15--------------------
---------------------4.5.4.20--------------------
---------------------4.5.5--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.9--------------------
---------------------4.5.10--------------------
---------------------<function get at 0x705c0e510d60>--------------------
---------------------<class 'function'>--------------------
---------------------4.3.1--------------------
---------------------4.3.2--------------------
---------------------4.3.3--------------------
---------------------4.3.4--------------------
---------------------4.3.5--------------------
---------------------4.3.6--------------------
---------------------4.3.7--------------------
---------------------4.3.12--------------------
---------------------4.3.14--------------------
---------------------4.3.15--------------------
---------------------4.3.16--------------------
---------------------4.3.17--------------------
---------------------4.5.1--------------------
---------------------4.5.1.1--------------------
---------------------4.5.1.2--------------------
---------------------4.5.1.24--------------------
---------------------4.5.1.25--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.3--------------------
---------------------4.5.1.4--------------------
---------------------4.5.1.5--------------------
---------------------4.5.1.6--------------------
---------------------4.5.1.7--------------------
---------------------4.5.1.8--------------------
---------------------4.5.1.26--------------------
---------------------4.5.1.30--------------------
---------------------4.5.1.31--------------------
---------------------4.5.1.32--------------------
---------------------4.5.2--------------------
---------------------4.5.3--------------------
---------------------4.5.10.1--------------------
---------------------4.5.10.25--------------------
---------------------4.5.10.26--------------------
---------------------4.5.10.28--------------------
---------------------4.5.10.288--------------------
---------------------4.5.10.29--------------------
---------------------4.5.10.30--------------------
---------------------4.5.10.32--------------------
---------------------4.5.4--------------------
---------------------4.5.4.1--------------------
---------------------4.5.4.2--------------------
---------------------4.5.4.3--------------------
---------------------4.5.4.4--------------------
---------------------4.5.4.5--------------------
---------------------4.5.4.6--------------------
---------------------4.5.4.7--------------------
---------------------4.5.4.8--------------------
---------------------4.5.4.11--------------------
---------------------4.5.4.12--------------------
---------------------4.5.4.13--------------------
---------------------4.5.4.14--------------------
---------------------4.5.4.15--------------------
---------------------4.5.4.20--------------------
---------------------4.5.5--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.6--------------------
---------------------4.5.7--------------------
---------------------4.5.8--------------------
---------------------4.5.9--------------------
---------------------4.5.10--------------------
---------------------<function get at 0x705c0e510d60>--------------------
---------------------<class 'function'>--------------------
---------------------4.3.8--------------------
---------------------4.3.8.1--------------------
---------------------4.3.8.1.1--------------------
---------------------4.3.8.1.2--------------------
---------------------4.3.8.1.3--------------------
---------------------4.3.8.1.4--------------------
---------------------4.3.8--------------------
---------------------4.3.8.1--------------------
---------------------4.3.8.1.1--------------------
---------------------4.3.8.1.2--------------------
---------------------4.3.8.1.3--------------------
---------------------4.3.8.1.4--------------------
---------------------4.3.8--------------------
---------------------4.3.8.1--------------------
---------------------4.3.8.1.1--------------------
---------------------4.3.8.1.2--------------------
---------------------4.3.8.1.3--------------------
---------------------4.3.8.1.4--------------------
---------------------4.3.8--------------------
---------------------4.3.8.1--------------------
---------------------4.3.8.1.1--------------------
---------------------4.3.8.1.2--------------------
---------------------4.3.8.1.3--------------------
---------------------4.3.8.1.4--------------------
---------------------4.3.8--------------------
---------------------4.3.8.1--------------------
---------------------4.3.8.1.1--------------------
---------------------4.3.8.1.2--------------------
---------------------4.3.8.1.3--------------------
---------------------4.3.8.1.4--------------------
---------------------4.3.8--------------------
---------------------4.3.8.1--------------------
---------------------4.3.8.1.1--------------------
---------------------4.3.8.1.2--------------------
---------------------4.3.8.1.3--------------------
---------------------4.3.8.1.4--------------------
---------------------4.3.8--------------------
---------------------4.3.8.1--------------------
---------------------4.3.8.1.1--------------------
---------------------4.3.8.1.2--------------------
---------------------4.3.8.1.3--------------------
---------------------4.3.8.1.4--------------------
---------------------4.3.8--------------------
---------------------4.3.8.1--------------------
---------------------4.3.8.1.1--------------------
---------------------4.3.8.1.2--------------------
---------------------4.3.8.1.3--------------------
---------------------4.3.8.1.4--------------------
-2024-10-06 11:18:40,714 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+------------1------------05:33:37
+------------2------------05:33:37
+------------3------------05:33:37
+------------4------------05:33:37
+2024-10-07 05:33:38,261 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
 INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-2024-10-06 11:18:40,716 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,264 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+2024-10-07 05:33:38,267 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
 WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-2024-10-06 11:18:40,717 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,267 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,270 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
 INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-2024-10-06 11:18:40,718 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-2024-10-06 11:18:40,719 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
-WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
-2024-10-06 11:18:40,722 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+2024-10-07 05:33:38,269 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+2024-10-07 05:33:38,272 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,273 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
 INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-2024-10-06 11:18:40,723 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+2024-10-07 05:33:38,275 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,277 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+2024-10-07 05:33:38,276 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,279 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+2024-10-07 05:33:38,269 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,278 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,274 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
 INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-2024-10-06 11:18:40,724 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,282 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
 WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-2024-10-06 11:18:40,725 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
-[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-2024-10-06 11:18:40,725 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
-[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-2024-10-06 11:18:40,726 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-2024-10-06 11:18:40,727 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-2024-10-06 11:18:40,728 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-2024-10-06 11:18:40,726 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-2024-10-06 11:18:40,729 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-2024-10-06 11:18:40,729 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-2024-10-06 11:18:40,730 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-2024-10-06 11:18:40,730 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
-[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-2024-10-06 11:18:40,731 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
-INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-2024-10-06 11:18:40,732 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+2024-10-07 05:33:38,282 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
 INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-2024-10-06 11:18:40,733 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
-[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
-2024-10-06 11:18:40,733 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+2024-10-07 05:33:38,283 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
 INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-2024-10-06 11:18:40,734 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,283 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
 INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-2024-10-06 11:18:40,734 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,284 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
 INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
 [feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
-2024-10-06 11:18:40,735 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-2024-10-06 11:18:40,738 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-2024-10-06 11:18:40,739 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
-2024-10-06 11:18:40,743 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
-WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-2024-10-06 11:18:40,747 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-2024-10-06 11:18:40,747 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-2024-10-06 11:18:40,748 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
-2024-10-06 11:18:40,749 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-2024-10-06 11:18:40,750 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-2024-10-06 11:18:40,751 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-2024-10-06 11:18:40,751 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
-2024-10-06 11:18:40,752 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,285 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
 INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-2024-10-06 11:18:40,753 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,286 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,288 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,288 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,290 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,290 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,291 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,292 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,293 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,295 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,296 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
 INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-2024-10-06 11:18:40,753 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,297 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,298 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
 INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
-2024-10-06 11:18:40,754 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,299 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
 INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,299 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,300 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,301 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,304 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,305 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
 WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
-2024-10-06 11:18:40,754 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,305 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,306 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,307 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,308 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,309 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,310 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,314 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,319 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,320 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,320 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,321 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
 WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
 WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+2024-10-07 05:33:38,338 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+2024-10-07 05:33:38,339 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,341 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,342 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,348 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
 WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
---------------------4.3.8.1.5--------------------
---------------------4.3.8.1.5--------------------
---------------------4.3.8.1.5--------------------
---------------------4.3.8.1.5--------------------
---------------------4.3.8.1.5--------------------
---------------------4.3.8.1.5--------------------
---------------------4.3.8.1.5--------------------
---------------------4.3.8.1.5--------------------
-2024-10-06 11:18:41,252 INFO Request ID is aad5e03e-db96-4638-a2de-2700ae79ab9d
-INFO:cads_api_client.processing:Request ID is aad5e03e-db96-4638-a2de-2700ae79ab9d
-2024-10-06 11:18:41,272 INFO Request ID is fc05ff3f-f0fd-4a83-b44f-2404b6bc3c2c
-INFO:cads_api_client.processing:Request ID is fc05ff3f-f0fd-4a83-b44f-2404b6bc3c2c
-2024-10-06 11:18:41,294 INFO Request ID is 0e2dc16c-532c-4fb5-a107-002e60c60614
-INFO:cads_api_client.processing:Request ID is 0e2dc16c-532c-4fb5-a107-002e60c60614
-2024-10-06 11:18:41,364 INFO Request ID is e542896b-322d-419d-aa0f-0e4a42904fef
-INFO:cads_api_client.processing:Request ID is e542896b-322d-419d-aa0f-0e4a42904fef
-2024-10-06 11:18:41,365 INFO Request ID is 96c0a6b2-9d0a-4213-8684-d19e16ac1d59
-INFO:cads_api_client.processing:Request ID is 96c0a6b2-9d0a-4213-8684-d19e16ac1d59
-2024-10-06 11:18:41,400 INFO status has been updated to accepted
+------------5------------05:33:38
+------------5------------05:33:38
+------------5------------05:33:38
+------------5------------05:33:38
+------------5------------05:33:38
+------------5------------05:33:38
+------------5------------05:33:38
+------------5------------05:33:38
+------------5------------05:33:38
+------------5------------05:33:38
+------------5------------05:33:38
+2024-10-07 05:33:38,583 INFO [2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+INFO:cads_api_client.processing:[2024-09-28T00:00:00] **Welcome to the New Climate Data Store (CDS)!** This new system is in its early days of full operations and still undergoing enhancements and fine tuning. Some disruptions are to be expected. Your 
+[feedback](https://jira.ecmwf.int/plugins/servlet/desk/portal/1/create/202) is key to improve the user experience on the new CDS for the benefit of everyone. Thank you.
+2024-10-07 05:33:38,584 WARNING [2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+WARNING:cads_api_client.processing:[2024-09-26T00:00:00] Should you have not yet migrated from the old CDS system to the new CDS, please check our [informative page](https://confluence.ecmwf.int/x/uINmFw) for guidance.
+2024-10-07 05:33:38,586 INFO [2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+INFO:cads_api_client.processing:[2024-09-26T00:00:00] Watch our [Forum](https://forum.ecmwf.int/) for Announcements, news and other discussed topics.
+2024-10-07 05:33:38,589 INFO [2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+INFO:cads_api_client.processing:[2024-09-16T00:00:00] Remember that you need to have an ECMWF account to use the new CDS. **Your old CDS credentials will not work in new CDS!**
+2024-10-07 05:33:38,590 WARNING [2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+WARNING:cads_api_client.processing:[2024-06-16T00:00:00] CDS API syntax is changed and some keys or parameter names may have also changed. To avoid requests failing, please use the "Show API request code" tool on the dataset Download Form to check you are using the correct syntax for your API request.
+------------5------------05:33:38
+2024-10-07 05:33:38,802 INFO Request ID is 3d96b9e1-93f5-425d-95a6-b04cebfe6166
+INFO:cads_api_client.processing:Request ID is 3d96b9e1-93f5-425d-95a6-b04cebfe6166
+2024-10-07 05:33:38,814 INFO Request ID is d7535d70-dcea-400a-a1bd-85a7bf1eb8ce
+INFO:cads_api_client.processing:Request ID is d7535d70-dcea-400a-a1bd-85a7bf1eb8ce
+2024-10-07 05:33:38,854 INFO Request ID is 55b8635f-b5e1-4640-8c45-7df7ffd34322
+INFO:cads_api_client.processing:Request ID is 55b8635f-b5e1-4640-8c45-7df7ffd34322
+2024-10-07 05:33:38,861 INFO Request ID is f5150233-abe5-4227-b953-369b1d3176c0
+INFO:cads_api_client.processing:Request ID is f5150233-abe5-4227-b953-369b1d3176c0
+2024-10-07 05:33:38,934 INFO Request ID is 3c6aaff0-b097-48b5-977f-11808cdeeccd
+INFO:cads_api_client.processing:Request ID is 3c6aaff0-b097-48b5-977f-11808cdeeccd
+2024-10-07 05:33:38,945 INFO status has been updated to accepted
 INFO:cads_api_client.processing:status has been updated to accepted
-2024-10-06 11:18:41,425 INFO status has been updated to accepted
+2024-10-07 05:33:38,947 INFO Request ID is 9ee63f1b-333d-4262-8809-fef66c3f55fe
+INFO:cads_api_client.processing:Request ID is 9ee63f1b-333d-4262-8809-fef66c3f55fe
+2024-10-07 05:33:38,961 INFO Request ID is 2be24fdd-50f4-4ad7-acba-bb4e54d3f9ba
+INFO:cads_api_client.processing:Request ID is 2be24fdd-50f4-4ad7-acba-bb4e54d3f9ba
+2024-10-07 05:33:38,963 INFO status has been updated to accepted
 INFO:cads_api_client.processing:status has been updated to accepted
-2024-10-06 11:18:41,495 INFO status has been updated to accepted
+2024-10-07 05:33:38,992 INFO status has been updated to accepted
 INFO:cads_api_client.processing:status has been updated to accepted
-2024-10-06 11:18:41,660 INFO Request ID is 9db470a4-fb6a-4097-9f11-600494813e76
-INFO:cads_api_client.processing:Request ID is 9db470a4-fb6a-4097-9f11-600494813e76
-2024-10-06 11:18:41,717 INFO Request ID is e9ac858d-9604-4dc0-943c-57ad7d6c6604
-INFO:cads_api_client.processing:Request ID is e9ac858d-9604-4dc0-943c-57ad7d6c6604
-2024-10-06 11:18:41,741 INFO status has been updated to accepted
+2024-10-07 05:33:38,997 INFO status has been updated to accepted
 INFO:cads_api_client.processing:status has been updated to accepted
-2024-10-06 11:18:41,791 INFO Request ID is edb5378d-d330-4bd6-a4e8-106139c9078d
-INFO:cads_api_client.processing:Request ID is edb5378d-d330-4bd6-a4e8-106139c9078d
-2024-10-06 11:18:41,792 INFO status has been updated to accepted
+2024-10-07 05:33:39,006 INFO Request ID is a7d2f3d1-cb5a-4b5d-96ba-41e2d702f1aa
+INFO:cads_api_client.processing:Request ID is a7d2f3d1-cb5a-4b5d-96ba-41e2d702f1aa
+2024-10-07 05:33:39,031 INFO Request ID is c72e8b4a-efec-403f-a3ff-778d03a26aee
+INFO:cads_api_client.processing:Request ID is c72e8b4a-efec-403f-a3ff-778d03a26aee
+2024-10-07 05:33:39,045 INFO Request ID is 727b5620-02ac-47df-8b55-fe1dbddb16ca
+INFO:cads_api_client.processing:Request ID is 727b5620-02ac-47df-8b55-fe1dbddb16ca
+2024-10-07 05:33:39,054 INFO Request ID is 925c3c4c-ba7a-4212-8aa2-a4e6af34babd
+INFO:cads_api_client.processing:Request ID is 925c3c4c-ba7a-4212-8aa2-a4e6af34babd
+2024-10-07 05:33:39,078 INFO status has been updated to accepted
 INFO:cads_api_client.processing:status has been updated to accepted
-2024-10-06 11:18:41,824 INFO status has been updated to accepted
+2024-10-07 05:33:39,097 INFO status has been updated to accepted
 INFO:cads_api_client.processing:status has been updated to accepted
-2024-10-06 11:18:41,853 INFO status has been updated to accepted
+2024-10-07 05:33:39,100 INFO status has been updated to accepted
 INFO:cads_api_client.processing:status has been updated to accepted
-2024-10-06 11:18:41,927 INFO status has been updated to accepted
+2024-10-07 05:33:39,163 INFO status has been updated to accepted
 INFO:cads_api_client.processing:status has been updated to accepted
-2024-10-06 11:18:43,081 INFO status has been updated to running
+2024-10-07 05:33:39,172 INFO status has been updated to accepted
+INFO:cads_api_client.processing:status has been updated to accepted
+2024-10-07 05:33:39,197 INFO status has been updated to accepted
+INFO:cads_api_client.processing:status has been updated to accepted
+2024-10-07 05:33:39,198 INFO status has been updated to accepted
+INFO:cads_api_client.processing:status has been updated to accepted
+2024-10-07 05:33:39,428 INFO Request ID is 8e5aa7c5-c2f6-4036-a287-c655e556cc92
+INFO:cads_api_client.processing:Request ID is 8e5aa7c5-c2f6-4036-a287-c655e556cc92
+2024-10-07 05:33:39,668 INFO status has been updated to accepted
+INFO:cads_api_client.processing:status has been updated to accepted
+2024-10-07 05:34:28,157 INFO status has been updated to successful
+INFO:cads_api_client.processing:status has been updated to successful
+2024-10-07 05:34:28,179 INFO status has been updated to successful
+INFO:cads_api_client.processing:status has been updated to successful
+2024-10-07 05:34:28,225 INFO status has been updated to successful
+INFO:cads_api_client.processing:status has been updated to successful
+2024-10-07 05:34:28,253 INFO status has been updated to running
 INFO:cads_api_client.processing:status has been updated to running
-2024-10-06 11:18:45,463 INFO status has been updated to successful
+2024-10-07 05:34:28,354 INFO status has been updated to successful
 INFO:cads_api_client.processing:status has been updated to successful
 INFO:atlite.datasets.era5:CDS: Downloading variables
-	100m_u_component_of_wind (2011-5)
-	100m_v_component_of_wind (2011-5)
-	forecast_surface_roughness (2011-5)
+	100m_u_component_of_wind (2011-6)
+	100m_v_component_of_wind (2011-6)
+	forecast_surface_roughness (2011-6)
 
-INFO:multiurl.base:Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache/21731e86944d7e1191f2c61ca7e82ea4.nc
-2024-10-06 11:18:45,802 INFO status has been updated to successful
+INFO:multiurl.base:Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache/41923f84e56d93a05ef1e70af73878c.nc
+2024-10-07 05:34:28,538 INFO status has been updated to successful
 INFO:cads_api_client.processing:status has been updated to successful
---------------------4.3.8.1.6--------------------
---------------------4.3.8.1.8--------------------
---------------------4.3.8.1.9--------------------
---------------------4.3.8.1.10--------------------
---------------------4.3.8.1.11--------------------
---------------------4.3.8.1.12--------------------
---------------------4.3.8.1.13--------------------
---------------------4.3.8.1.14--------------------
---------------------4.3.8.1.15--------------------
-21731e86944d7e1191f2c61ca7e82ea4.nc:   0%|          | 0.00/3.46G [00:00<?, ?B/s]--------------------4.3.8.1.6--------------------
---------------------4.3.8.1.8--------------------
-21731e86944d7e1191f2c61ca7e82ea4.nc:   0%|          | 1.00M/3.46G [00:02<2:32:39, 405kB/s]2024-10-06 11:18:49,036 INFO status has been updated to successful
+2024-10-07 05:34:28,546 INFO status has been updated to successful
 INFO:cads_api_client.processing:status has been updated to successful
-2024-10-06 11:18:49,132 INFO status has been updated to successful
+------------6------------05:34:28
+------------9------------05:34:28
+------------10------------05:34:28
+------------11------------05:34:28
+------------12------------05:34:28
+------------13------------05:34:28
+------------14------------05:34:28
+------------15------------05:34:28
+------------16------------05:34:28
+------------6------------05:34:28
+------------9------------05:34:28
+------------6------------05:34:28
+------------9------------05:34:28
+------------6------------05:34:28
+------------9------------05:34:28
+------------6------------05:34:28
+------------9------------05:34:28
+41923f84e56d93a05ef1e70af73878c.nc:   0%|          | 0.00/3.38G [00:00<?, ?B/s]------------6------------05:34:29
+------------9------------05:34:29
+41923f84e56d93a05ef1e70af73878c.nc:   5%|▍         | 165M/3.38G [00:24<10:28, 5.49MB/s]  2024-10-07 05:34:54,013 INFO status has been updated to successful
 INFO:cads_api_client.processing:status has been updated to successful
-2024-10-06 11:18:49,372 INFO status has been updated to running
-INFO:cads_api_client.processing:status has been updated to running
---------------------4.3.8.1.6--------------------
---------------------4.3.8.1.8--------------------
---------------------4.3.8.1.6--------------------
---------------------4.3.8.1.8--------------------
-21731e86944d7e1191f2c61ca7e82ea4.nc:   0%|          | 4.00M/3.46G [00:07<1:46:28, 580kB/s]2024-10-06 11:18:54,574 INFO status has been updated to successful
+41923f84e56d93a05ef1e70af73878c.nc:   5%|▍         | 166M/3.38G [00:25<09:32, 6.03MB/s]2024-10-07 05:34:54,182 INFO status has been updated to successful
 INFO:cads_api_client.processing:status has been updated to successful
-2024-10-06 11:18:54,656 INFO status has been updated to successful
+2024-10-07 05:34:54,234 INFO status has been updated to successful
 INFO:cads_api_client.processing:status has been updated to successful
-2024-10-06 11:18:54,775 INFO status has been updated to successful
+41923f84e56d93a05ef1e70af73878c.nc:   5%|▍         | 167M/3.38G [00:25<10:41, 5.38MB/s]2024-10-07 05:34:54,318 INFO status has been updated to successful
 INFO:cads_api_client.processing:status has been updated to successful
-2024-10-06 11:18:54,787 INFO status has been updated to successful
+2024-10-07 05:34:54,354 INFO status has been updated to successful
 INFO:cads_api_client.processing:status has been updated to successful
---------------------4.3.8.1.6--------------------
---------------------4.3.8.1.8--------------------
---------------------4.3.8.1.6--------------------
---------------------4.3.8.1.8--------------------
---------------------4.3.8.1.6--------------------
---------------------4.3.8.1.8--------------------
---------------------4.3.8.1.6--------------------
---------------------4.3.8.1.8--------------------
-21731e86944d7e1191f2c61ca7e82ea4.nc:  94%|█████████▍| 3.25G/3.46G [15:44<02:58, 1.23MB/s] 
+41923f84e56d93a05ef1e70af73878c.nc:   5%|▍         | 168M/3.38G [00:25<09:31, 6.04MB/s]------------6------------05:34:54
+------------9------------05:34:54
+------------6------------05:34:54
+------------9------------05:34:54
+41923f84e56d93a05ef1e70af73878c.nc:   5%|▍         | 169M/3.38G [00:25<10:32, 5.45MB/s]------------6------------05:34:54
+------------9------------05:34:54
+------------6------------05:34:54
+------------9------------05:34:54
+------------6------------05:34:54
+------------9------------05:34:54
+41923f84e56d93a05ef1e70af73878c.nc:   5%|▍         | 172M/3.38G [00:26<11:50, 4.84MB/s]INFO:cads_api_client.processing:status has been updated to successful
+41923f84e56d93a05ef1e70af73878c.nc:   5%|▌         | 174M/3.38G [00:26<12:07, 4.73MB/s]------------6------------05:34:55
+------------9------------05:34:55
+41923f84e56d93a05ef1e70af73878c.nc:  56%|█████▌    | 1.88G/3.38G [08:30<27:00, 994kB/s] 
