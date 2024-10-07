@@ -25,12 +25,15 @@ cutout = atlite.Cutout(
     path=f"{region_name}-{year}_timeseries", module="era5", 
     bounds=region.unary_union.bounds, 
     time=f"{year}",
-    chunks={"time": 100,},)
+    chunks={"time": 100,},
+)
+
 # This is where all the work happens (this can take some time).
 cutout.prepare(
     compression={"zlib": True, "complevel": 9},
     monthly_requests=True,
-    concurrent_requests=True)
+    concurrent_requests=True
+)
 
 # Extract the wind power generation capacity factors
 wind_power_generation = cutout.wind(
